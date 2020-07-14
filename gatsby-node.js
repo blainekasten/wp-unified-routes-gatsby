@@ -5,3 +5,9 @@
  */
 
 // You can delete this file if you're not using it
+
+exports.onCreateNode = node => {
+  if (node.type === `post` && node.length === 1) {
+    node.setComponent(require.resolve("templates/single-post"))
+  }
+}
